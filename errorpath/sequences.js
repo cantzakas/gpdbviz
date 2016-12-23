@@ -9,18 +9,14 @@ var b = {
 };
 
 // Mapping of step names to colors.
+// Mapping of step names to colors.
 var colors = {
-  "COMMIT": "#51a3a3",
-  "SHOW": "#83697b",
-  "LISTEN": "#cb904d",
-  "BEGIN": "#dfcc74",
-  "UPDATE": "#c3e991",
-  "FETCH": "#b2abf2",
-  "SET", "89043d",
-  "START", "2fe6de",
-  "DECLARE", "1c3041",
-  "DEALLOCATE", "18f2b2",
-  "CLOSE", "e2e1e8"
+  "home": "#5687d1",
+  "product": "#7b615c",
+  "search": "#de783b",
+  "account": "#6ab975",
+  "other": "#a173d1",
+  "end": "#bbbbbb"
 };
 
 // Total size of all segments; we set this later, after loading the data.
@@ -45,7 +41,7 @@ var arc = d3.svg.arc()
 
 // Use d3.text and d3.csv.parseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-d3.text("data.csv", function(text) {
+d3.text("visit-sequences.csv.csv", function(text) {
   var csv = d3.csv.parseRows(text);
   var json = buildHierarchy(csv);
   createVisualization(json);
